@@ -1,28 +1,29 @@
 {
-	"name": "Getting Started Example",
-	"version": "1.0",
-	"description": "Build an Extension!",
-	"permissions": ["activeTab", "declarativeContent", "storage"],
-	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
-	},
-	"page_action": {
-		"default_popup": "popup.html",
+	"name": "Link Crawler",
+	"short_name": "L-Crawler",
+	"version": "0.0.0.1",
+	"description": "Crawl Link from active page",
+	"permissions": [
+		"activeTab"
+	],
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["crawl.js"]
+	}],
+	"browser_action": {
 		"default_icon": {
-			"16": "images/get_started16.png",
-			"32": "images/get_started32.png",
-			"48": "images/get_started48.png",
-			"128": "images/get_started128.png"
-		}
+			"16": "images/koegu-16.png",
+			"32": "images/koegu-32.png",
+			"48": "images/koegu-48.png",
+			"128": "images/koegu-128.png"
+		},
+		"default_popup": "crawl.html"
 	},
 	"icons": {
-		"16": "images/get_started16.png",
-		"32": "images/get_started32.png",
-		"48": "images/get_started48.png",
-		"128": "images/get_started128.png"
+		"16": "images/koegu-16.png",
+		"32": "images/koegu-32.png",
+		"48": "images/koegu-48.png",
+		"128": "images/koegu-128.png"
 	},
-	
-    "options_page": "options.html",
 	"manifest_version": 2
 }

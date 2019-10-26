@@ -1,0 +1,63 @@
+<!doctype html>
+
+<style>
+	body {
+		width: 500px;
+	}
+
+	.row {
+		padding: 5px 5px 5px 0px;
+	}
+
+	#crawl-filter {
+		width: 100%;
+	}
+
+	#crawl-trigger {
+		width: 100%;
+	}
+
+	#crawl-result {
+		width: 100%;
+		height: 300px;
+		overflow: scroll;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+	textarea {
+		resize: none;
+		white-space: nowrap;
+	}
+</style>
+
+<html>
+
+<head>
+	<title>Link Crawler</title>
+</head>
+
+<body>
+	<h1>Link Crawler</h1>
+	<div class="row">
+		<input id="crawl-filter" placeholder="Crawl Filter" />
+	</div>
+	<div class="row">
+		<button id="crawl-trigger">Crawl</button>
+	</div>
+	<div class="row">
+		<textarea id="crawl-result" placeholder="Crawl Result!"></textarea>
+	</div>
+	<div class="row text-right">
+		<span>by <strong>
+				Patrick D Koe
+			</strong>
+		</span>
+	</div>
+</body>
+
+<script src="crawl.js"></script>
+
+</html>
