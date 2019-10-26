@@ -1,16 +1,25 @@
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById('crawl-trigger').onclick = function (element) {
-  //   console.log(element)
 
-  crawl()
+document.getElementById('text-trigger').onclick = function () {
+  document.getElementById('crawl-result-textarea').style = ""
+  document.getElementById('crawl-result-link').style = "display: none"
 }
 
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+document.getElementById('link-trigger').onclick = function () {
+  document.getElementById('crawl-result-textarea').style = "display: none"
+  document.getElementById('crawl-result-link').style = ""
+}
+
+document.getElementById('crawl-trigger').onclick = function (element) {
+   crawl()
+}
+
 function crawl () {
-  var crawl_result = document.getElementById('crawl-result')
+  var crawl_result_textarea = document.getElementById('crawl-result-textarea')
+  var crawl_result_link = document.getElementById('crawl-result-link')
   var filter = document.getElementById('crawl-filter').value
   //   console.log(elem)
-  crawl_result.innerHTML = ''
+  crawl_result_textarea.innerHTML = ''
+  crawl_result_link.innerHTML = ''
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.executeScript(
@@ -73,11 +82,13 @@ function crawl () {
           }
 
           if (filter !== '' && href.includes(filter)) {
-            crawl_result.innerHTML += href + '&#13;&#10;'
+            crawl_result_textarea.innerHTML += href + '&#13;&#10;'
+            crawl_result_link.innerHTML += '<div><a href="'+href+'">'+href+'</a></div>'
           }
 
           if (filter === '') {
-            crawl_result.innerHTML += href + '&#13;&#10;'
+            crawl_result_textarea.innerHTML += href + '&#13;&#10;'
+            crawl_result_link.innerHTML +=   '<div><a href="'+href+'">'+href+'</a></div>'
           }
         }
         console.log(crawl_url)
