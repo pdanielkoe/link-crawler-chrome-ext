@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Link Crawler</title>
+
+	<link rel="stylesheet" href="/css/crawl.css">
+</head>
+
+<body>
+
+	<div class="row">
+		<h1 class="title">Link Crawler</h1>
+		<input id="crawl-filter" class="cr-input" placeholder="Filter" value="" />
+	</div>
+	<div class="row">
+		<a id="text-trigger" class="cr-button">Text</a>
+		<a id="link-trigger" class="cr-button">Link</a>
+		<a id="crawl-trigger" class="cr-button">Crawl</a>
+	</div>
+	<div class="row">
+		<div id="crawl-result-link" class="cr-link-container" style="display: none"></div>
+		<textarea id="crawl-result-textarea" class="cr-textarea" placeholder="Crawl Result!"></textarea>
+	</div>
+	<div class="row">
+		<div class="version">
+			version <strong>
+				0.0.0.2
+			</strong>
+		</div>
+		<div class="author">
+			by <strong>
+				Patrick D Koe
+			</strong>
+		</div>
+	</div>
+</body>
+
+<script src="/js/crawl.js"></script>
+
+</html>
