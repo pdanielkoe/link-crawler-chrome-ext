@@ -1,7 +1,7 @@
 {
 	"name": "Link Crawler",
 	"short_name": "L-Crawler",
-	"version": "0.0.0.2",
+	"version": "0.0.0.3",
 	"description": "Crawl Link from active page",
 	"permissions": [
 		"activeTab"
