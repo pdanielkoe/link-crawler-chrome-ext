@@ -17,6 +17,9 @@ function crawl () {
   var crawl_result_textarea = document.getElementById('crawl-result-textarea')
   var crawl_result_link = document.getElementById('crawl-result-link')
   var filter = document.getElementById('crawl-filter').value
+
+  filter = filter.split(',');
+  console.log(filter);
   //   console.log(elem)
   crawl_result_textarea.innerHTML = ''
   crawl_result_link.innerHTML = ''
@@ -81,7 +84,7 @@ function crawl () {
             }
           }
 
-          if (filter !== '' && href.includes(filter)) {
+          if (filter !== '' && filter.some(r => href.includes(r))) {
             crawl_result_textarea.innerHTML += href + '&#13;&#10;'
             crawl_result_link.innerHTML += '<div><a href="'+href+'">'+href+'</a></div>'
           }
